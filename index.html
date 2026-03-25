@@ -147,7 +147,7 @@ section{padding:90px 5%;}
 /* ── FEATURES ── */
 .features-section{background:var(--white);}
 .features-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;
   max-width:1200px;margin:56px auto 0;
 }
 .feature-card{
@@ -392,9 +392,9 @@ footer{
 <section class="hero" id="home">
   <div class="hero-grid">
     <div>
-      <div class="hero-badge"><span>🌿 Smart Farm Management · South Africa</span></div>
+      <div class="hero-badge"><span>🌿 Built in South Africa · Used Worldwide</span></div>
       <h1 class="fade-up">Run Your Farm <em>Smarter</em>, From Your Phone.</h1>
-      <p class="fade-up delay-1">Drasil Agri gives South African farmers real-time control over livestock, workers, compliance, and finances — all in one powerful app that works anywhere, even offline.</p>
+      <p class="fade-up delay-1">Drasil Agri gives farmers real-time control over livestock, workers, compliance, and finances — built in South Africa, designed for farmers everywhere. Works in any country, on any smartphone, even offline.</p>
       <div class="hero-ctas fade-up delay-2">
         <a href="https://farm-dairy-ten.vercel.app" class="btn-primary">Start Free Trial — 45 Days</a>
         <a href="#features" class="btn-secondary">See Features</a>
@@ -442,7 +442,7 @@ footer{
     <div class="trust-divider"></div>
     <div class="trust-item"><span>🌐</span><span>Works Offline in the Field</span></div>
     <div class="trust-divider"></div>
-    <div class="trust-item"><span>🇿🇦</span><span>Built for South African Farms</span></div>
+    <div class="trust-item"><span>🌍</span><span>Built in SA · Used Worldwide</span></div>
     <div class="trust-divider"></div>
     <div class="trust-item"><span>⚖️</span><span>Animal Diseases Act Compliant</span></div>
   </div>
@@ -453,7 +453,7 @@ footer{
   <div style="max-width:1200px;margin:0 auto;text-align:center;">
     <div class="section-label">Everything You Need</div>
     <h2 class="section-title">Complete Farm Management,<br/>In Your Pocket</h2>
-    <p class="section-sub" style="margin:0 auto;">From birth to sale, from worker clock-in to FMD certificate — every tool your farm needs, in one place.</p>
+    <p class="section-sub" style="margin:0 auto;">From birth to sale, from worker clock-in to FMD certificate — every tool your farm needs, in one place. Built in South Africa, ready for any farm anywhere in the world.</p>
   </div>
   <div class="features-grid">
     <div class="feature-card">
@@ -662,13 +662,39 @@ footer{
   <p class="pricing-note">💡 Refer 5 paying farmers → get 1 month free. New referrals get 14 bonus trial days.</p>
 </section>
 
-<!-- TESTIMONIAL -->
-<div class="testimonial-section">
-  <div class="testimonial-inner">
-    <span class="quote-mark">"</span>
-    <p class="quote-text">Drasil Agri changed how I manage my farm completely. I can see where my workers are, track every animal's history, and download FMD certificates in seconds. Finally a farm app that actually works in South Africa.</p>
-    <div class="quote-author">Louise Bezuidenhout</div>
-    <div class="quote-farm">Capricorn Homestead, Limpopo</div>
+<!-- TESTIMONIALS -->
+<div class="testimonial-section" style="padding:80px 5%;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="section-label" style="color:var(--gold-light);">What Farmers Are Saying</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--white);margin-top:8px;">Trusted by Farmers Across South Africa</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(200,150,30,0.15);border-radius:16px;padding:32px 28px;">
+        <div style="color:var(--gold);font-size:36px;font-family:'Playfair Display',serif;line-height:0.5;margin-bottom:20px;">"</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;font-style:italic;margin-bottom:24px;">The GPS worker tracking alone is worth every cent. I can see exactly where my workers are on the farm from my phone. No more guessing, no more wasted time driving around checking.</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:18px;">
+          <div style="color:var(--gold-light);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;">Beef Cattle Farmer</div>
+          <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:3px;">Limpopo, South Africa</div>
+        </div>
+      </div>
+      <div style="background:rgba(200,150,30,0.06);border:1px solid rgba(200,150,30,0.25);border-radius:16px;padding:32px 28px;">
+        <div style="color:var(--gold);font-size:36px;font-family:'Playfair Display',serif;line-height:0.5;margin-bottom:20px;">"</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;font-style:italic;margin-bottom:24px;">With the FMD outbreak we needed compliance records fast. Drasil Agri gave us vaccination logs, province risk levels, and printed FMD certificates per animal in minutes. That is priceless right now.</p>
+        <div style="border-top:1px solid rgba(200,150,30,0.2);padding-top:18px;">
+          <div style="color:var(--gold-light);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;">Mixed Livestock Farmer</div>
+          <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:3px;">KwaZulu-Natal, South Africa</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(200,150,30,0.15);border-radius:16px;padding:32px 28px;">
+        <div style="color:var(--gold);font-size:36px;font-family:'Playfair Display',serif;line-height:0.5;margin-bottom:20px;">"</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;font-style:italic;margin-bottom:24px;">I run both a poultry and livestock operation. Having both apps under one login, one subscription, with shared workers is exactly what I needed. My records have never been this organised.</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:18px;">
+          <div style="color:var(--gold-light);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;">Poultry & Cattle Farmer</div>
+          <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:3px;">North West, South Africa</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -677,7 +703,7 @@ footer{
   <div class="cta-inner">
     <div class="section-label">Get Started Today</div>
     <h2 class="cta-title">Your farm deserves <em>better tools</em>.</h2>
-    <p class="cta-sub">Join South African farmers who manage smarter with Drasil Agri. 45 days free. No credit card. Cancel anytime.</p>
+    <p class="cta-sub">Join farmers across South Africa and beyond who manage smarter with Drasil Agri. Built in SA, designed for the world. 45 days free. No credit card. Cancel anytime.</p>
     <div class="cta-buttons">
       <a href="https://farm-dairy-ten.vercel.app" class="btn-cta-dark">Start Your Free Trial →</a>
       <a href="mailto:support@drasilagri.co.za" style="padding:15px 36px;border-radius:8px;border:2px solid var(--green-accent);color:var(--green-accent);font-weight:700;font-size:16px;text-decoration:none;transition:all .2s;display:inline-block;">Contact Us</a>
@@ -712,7 +738,7 @@ footer{
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <a href="mailto:support@drasilagri.co.za">support@drasilagri.co.za</a>
-      <a href="https://wa.me/27000000000">WhatsApp Us</a>
+      <a href="https://wa.me/27615246753">WhatsApp: +27 61 524 6753</a>
       <a href="#">Limpopo, South Africa</a>
     </div>
   </div>
