@@ -4,10 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Drasil Nova — SaaS, rooted deep, growing bright</title>
+<meta name="description" content="A South African SaaS studio. Three apps live, two forming. Rand-priced, offline-first, POPIA-ready." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* ─── EXACT design-system CSS from your Claude Design index.html ─── */
 :root {
   --bg: oklch(0.14 0.02 260);
   --bg-deep: oklch(0.09 0.02 260);
@@ -85,8 +87,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .logo { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; letter-spacing: 0.01em; }
 .logo-mark { width: 26px; height: 26px; flex: 0 0 26px; }
 .logo em { font-style: italic; color: var(--nova); }
-.nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--fg-dim); }
-.nav-links a:hover { color: var(--fg); }
+.nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--fg-dim); list-style: none; }
+.nav-links a:hover { color: var(--fg); transition: color 0.2s; }
 .nav-cta { display: flex; gap: 10px; align-items: center; }
 
 /* ---------- Buttons ---------- */
@@ -94,7 +96,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 18px; border-radius: 999px; font-size: 14px;
   border: 1px solid var(--border); background: var(--surface);
-  transition: all 0.2s ease;
+  transition: all 0.2s ease; cursor: pointer;
 }
 .btn:hover { border-color: oklch(0.55 0.03 260 / 0.7); background: var(--surface-2); }
 .btn-primary {
@@ -105,6 +107,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px oklch(1 0 0 / 0.1) inset, 0 12px 42px oklch(0.62 0.16 55 / 0.45); }
 .btn-ghost { background: transparent; border-color: var(--border-soft); }
+.btn-ghost:hover { border-color: var(--border); color: var(--fg); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -114,9 +117,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px;
   align-items: center;
 }
-.hero-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.hero-label { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; justify-content: center; }
-.hero-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--nova); box-shadow: 0 0 12px var(--nova); }
+.hero-text { display: flex; flex-direction: column; }
+.hero-label { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+.hero-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--nova); box-shadow: 0 0 12px var(--nova); animation: pulse-dot 2s ease-in-out infinite; }
 .hero h1 {
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(56px, 8vw, 104px);
@@ -125,25 +128,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .hero h1 em { color: var(--nova); font-style: italic; }
 .hero h1 .sap { color: var(--sap); font-style: italic; }
-.hero p.lede { font-size: 19px; max-width: 46ch; color: var(--fg-dim); line-height: 1.55; margin-bottom: 36px; margin-left: auto; margin-right: auto; }
-.hero-ctas { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: center; }
-.hero-meta { margin-top: 56px; display: flex; gap: 48px; font-family: var(--mono); font-size: 12px; color: var(--fg-dim); justify-content: center; flex-wrap: wrap; }
-.hero-meta b { color: var(--fg); font-weight: 500; display: block; font-family: var(--sans); font-size: 22px; margin-bottom: 4px; }
-
-/* Hero visual area */
-.hero-visual { position: relative; aspect-ratio: 1/1.05; }
+.hero p.lede { font-size: 19px; max-width: 46ch; color: var(--fg-dim); line-height: 1.55; margin-bottom: 36px; }
+.hero-ctas { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 56px; }
+.hero-meta { display: flex; gap: 48px; font-family: var(--mono); font-size: 12px; color: var(--fg-dim); flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--border-soft); }
+.hero-meta b { color: var(--fg); font-weight: 500; display: block; font-family: var(--serif); font-size: 32px; margin-bottom: 4px; font-style: italic; }
+.hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
 
 /* ---------- Sections ---------- */
 .section { position: relative; padding: 140px 0; }
 .section-head { display: flex; flex-direction: column; align-items: center; gap: 24px; margin-bottom: 80px; text-align: center; }
 .section-head h2 { font-family: var(--serif); font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -0.015em; max-width: 18ch; }
 .section-head h2 em { color: var(--nova); font-style: italic; }
+.section-head h2 em.sap { color: var(--sap); }
 .section-head .sub { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-dim); display: flex; gap: 16px; align-items: center; padding-top: 18px; border-top: 1px solid var(--border-soft); justify-content: center; flex-wrap: wrap; }
 .section-head .sub > span + span::before { content: "·"; margin-right: 16px; color: var(--fg-faint); }
 .section-head .meta-right { color: var(--fg-dim); max-width: 56ch; padding-top: 18px; font-size: 15px; text-align: center; }
 
 /* ---------- Products (branches) ---------- */
-.products { display: flex; flex-direction: column; gap: 12px; }
+.products { display: flex; flex-direction: column; }
 .product-row {
   position: relative;
   display: grid; grid-template-columns: 80px 1.2fr 1fr 140px; gap: 32px;
@@ -153,20 +155,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: background 0.3s ease;
 }
 .product-row:last-child { border-bottom: 1px solid var(--border-soft); }
-.product-row:hover { background: oklch(0.2 0.03 260 / 0.3); }
+.product-row:hover { background: oklch(0.2 0.03 260 / 0.3); border-radius: 12px; }
 .product-row .num { font-family: var(--serif); font-style: italic; font-size: 28px; color: var(--fg-faint); }
-.product-row .pname { font-family: var(--serif); font-size: 42px; line-height: 1; letter-spacing: -0.01em; }
+.product-row .pname { font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); line-height: 1; letter-spacing: -0.01em; margin-bottom: 10px; }
 .product-row .pname em { font-style: italic; }
-.product-row .pdesc { color: var(--fg-dim); font-size: 15px; max-width: 42ch; }
+.product-row .pdesc { color: var(--fg-dim); font-size: 15px; max-width: 42ch; line-height: 1.6; }
 .product-row .ptags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
 .product-row .tag { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 999px; color: var(--fg-dim); }
-.product-row .parrow { justify-self: end; opacity: 0.5; transition: opacity 0.2s, transform 0.2s; }
-.product-row:hover .parrow { opacity: 1; transform: translateX(6px); }
+.product-row .parrow { justify-self: end; opacity: 0.5; transition: opacity 0.2s, transform 0.2s; font-size: 22px; }
+.product-row:hover .parrow { opacity: 1; transform: translateX(6px); color: var(--nova); }
 
-/* Product mockup panels */
+/* Product colour accents */
+.pname-livestock { color: var(--sap); }
+.pname-karttly   { color: var(--plum); }
+.pname-cvready   { color: var(--nova); }
+.pname-coming    { color: var(--fg-faint); font-style: italic; }
+
+/* Mini SVG mockup panels */
 .product-mockup {
-  position: relative;
-  border-radius: 16px;
+  border-radius: 12px;
   background: linear-gradient(165deg, oklch(0.22 0.03 260 / 0.7), oklch(0.14 0.02 260 / 0.9));
   border: 1px solid var(--border-soft);
   box-shadow: 0 24px 60px oklch(0 0 0 / 0.4), inset 0 1px 0 oklch(1 0 0 / 0.05);
@@ -175,84 +182,82 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ---------- Features ---------- */
-.features-grid {
-  display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px;
-}
+.features-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
 .feature-card {
   background: var(--surface);
   border: 1px solid var(--border-soft);
-  border-radius: 14px;
-  padding: 28px;
+  border-radius: 14px; padding: 28px;
   backdrop-filter: blur(14px);
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
   min-height: 220px;
   display: flex; flex-direction: column; justify-content: space-between;
   transition: border-color 0.3s;
 }
 .feature-card:hover { border-color: var(--border); }
-.feature-card h3 { font-family: var(--serif); font-size: 28px; line-height: 1.05; letter-spacing: -0.01em; }
+.feature-card h3 { font-family: var(--serif); font-size: 28px; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 10px; }
 .feature-card h3 em { color: var(--nova); font-style: italic; }
+.feature-card h3 em.sap { color: var(--sap); }
+.feature-card h3 em.plum { color: var(--plum); }
 .feature-card p { color: var(--fg-dim); font-size: 14px; line-height: 1.55; }
 .feature-card .fnum { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; color: var(--fg-faint); text-transform: uppercase; margin-bottom: 20px; }
 
-.col-4 { grid-column: span 4; }
-.col-5 { grid-column: span 5; }
-.col-6 { grid-column: span 6; }
-.col-7 { grid-column: span 7; }
-.col-8 { grid-column: span 8; }
+.col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }
 .col-12 { grid-column: span 12; }
-
-/* ---------- Product blocks (deep dive) ---------- */
-.product-blocks { display: flex; flex-direction: column; gap: 140px; }
-.product-block {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-.pb-text { display: flex; flex-direction: column; }
-.pb-visual { width: 100%; }
-.pb-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.pb-bullets li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: var(--fg-dim); line-height: 1.55; padding-top: 12px; border-top: 1px dashed var(--border-soft); }
-.pb-bullets li:first-child { border-top: 0; padding-top: 0; }
 
 /* ---------- Logos bar ---------- */
 .logos {
   display: flex; flex-direction: column; align-items: center; gap: 36px;
   padding: 60px 0; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);
 }
-.logos-row { display: flex; gap: 56px; align-items: center; justify-content: center; flex-wrap: wrap; opacity: 0.65; filter: grayscale(1); }
-.logo-item { font-family: var(--serif); font-size: 22px; color: var(--fg-dim); display: flex; align-items: center; gap: 8px; }
+.logos-track-wrap { overflow: hidden; width: 100%; }
+.logos-track {
+  display: flex; gap: 56px; align-items: center;
+  animation: slide-marquee 28s linear infinite; width: max-content;
+}
+.logos-track:hover { animation-play-state: paused; }
+.logo-item { font-family: var(--serif); font-size: 22px; color: var(--fg-dim); display: flex; align-items: center; gap: 8px; font-style: italic; white-space: nowrap; opacity: 0.55; }
+.logo-star { color: var(--nova); font-style: normal; font-size: 10px; }
 
 /* ---------- Pricing ---------- */
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.pricing-grid.pricing-single { grid-template-columns: minmax(280px, 420px); }
-.app-pricing-block { display: flex; flex-direction: column; gap: 24px; padding: 32px 0; border-top: 1px solid var(--border-soft); }
-.app-pricing-block:first-child { border-top: 0; padding-top: 0; }
-.app-pricing-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
 .pricing-card {
   background: var(--surface);
   border: 1px solid var(--border-soft);
-  border-radius: 16px;
-  padding: 32px;
+  border-radius: 16px; padding: 32px;
   backdrop-filter: blur(14px);
   display: flex; flex-direction: column; gap: 24px;
+  position: relative; overflow: hidden;
 }
 .pricing-card.featured {
   border-color: oklch(0.72 0.16 60 / 0.5);
   background: linear-gradient(180deg, oklch(0.62 0.16 55 / 0.15), oklch(0.19 0.025 260 / 0.6));
   box-shadow: 0 0 80px oklch(0.62 0.16 55 / 0.2);
 }
+.pricing-card.featured::before {
+  content: ''; position: absolute; inset: 0; border-radius: 16px;
+  background: radial-gradient(ellipse at 50% 0%, oklch(0.82 0.14 75 / 0.1), transparent 60%);
+}
+.pricing-badge {
+  position: absolute; top: 18px; right: 18px;
+  font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+  background: var(--nova); color: oklch(0.18 0.04 60);
+  padding: 4px 10px; border-radius: 999px; font-weight: 500;
+}
 .pricing-card h4 { font-family: var(--serif); font-size: 32px; font-style: italic; }
+.pricing-card h4.nova { color: var(--nova); }
 .pricing-card .price { font-family: var(--serif); font-size: 56px; line-height: 1; display: flex; align-items: baseline; gap: 6px; }
+.pricing-card .price.nova { color: var(--nova); }
 .pricing-card .price span { font-family: var(--mono); font-size: 13px; color: var(--fg-dim); }
-.pricing-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: var(--fg-dim); }
-.pricing-card ul li { display: flex; gap: 10px; align-items: flex-start; padding-top: 12px; border-top: 1px dashed var(--border-soft); }
-.pricing-card ul li:first-child { border-top: 0; padding-top: 0; }
-.pricing-card ul li::before { content: "✦"; color: var(--nova); flex: 0 0 auto; font-size: 11px; transform: translateY(2px); }
+.pricing-card .period { font-family: var(--mono); font-size: 12px; color: var(--fg-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+.pricing-card ul { list-style: none; display: flex; flex-direction: column; gap: 0; font-size: 14px; color: var(--fg-dim); }
+.pricing-card ul li { display: flex; gap: 10px; align-items: flex-start; padding: 12px 0; border-top: 1px dashed var(--border-soft); line-height: 1.5; }
+.pricing-card ul li::before { content: "✦"; color: var(--nova); flex: 0 0 auto; font-size: 10px; margin-top: 3px; }
 
-/* ---------- Footer (roots) ---------- */
+/* ---------- Footer ---------- */
 .footer {
   margin-top: 80px; padding: 100px 0 60px; position: relative;
   border-top: 1px solid var(--border-soft);
@@ -260,111 +265,722 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 80px; }
 .footer-grid h5 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-dim); margin-bottom: 18px; }
-.footer-grid a { display: block; padding: 6px 0; color: var(--fg-dim); font-size: 14px; }
+.footer-grid a { display: block; padding: 6px 0; color: var(--fg-dim); font-size: 14px; transition: color 0.2s; }
 .footer-grid a:hover { color: var(--fg); }
-.footer-sig { font-family: var(--serif); font-size: clamp(80px, 14vw, 200px); line-height: 0.9; color: var(--fg-faint); opacity: 0.3; letter-spacing: -0.02em; overflow: hidden; white-space: nowrap; }
+.footer-quote { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--fg-dim); line-height: 1.7; margin-top: 10px; }
+.footer-sig { font-family: var(--serif); font-size: clamp(80px, 14vw, 200px); line-height: 0.9; color: var(--fg); opacity: 0.04; letter-spacing: -0.02em; overflow: hidden; white-space: nowrap; text-align: center; user-select: none; display: block; }
 .footer-meta { display: flex; justify-content: space-between; padding-top: 28px; border-top: 1px solid var(--border-soft); font-family: var(--mono); font-size: 11px; color: var(--fg-faint); text-transform: uppercase; letter-spacing: 0.12em; }
 
 /* ---------- Tweaks panel ---------- */
+#tweaks-toggle {
+  position: fixed; bottom: 20px; right: 20px; z-index: 100;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--fg-dim); font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(12px); transition: all 0.2s;
+}
+#tweaks-toggle:hover { border-color: var(--nova); color: var(--nova); }
 .tweaks-panel {
-  position: fixed; bottom: 20px; right: 20px;
-  z-index: 100; width: 280px;
+  position: fixed; bottom: 70px; right: 20px; z-index: 100; width: 280px;
   background: oklch(0.12 0.02 260 / 0.95);
   backdrop-filter: blur(18px);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 18px;
+  border-radius: 14px; padding: 18px;
   box-shadow: 0 20px 60px oklch(0 0 0 / 0.5);
-  font-family: var(--sans);
+  display: none;
 }
-.tweaks-panel h6 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-dim); margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
-.tweaks-panel h6 span { color: var(--nova); font-style: normal; }
+.tweaks-panel.open { display: block; }
+.tweaks-panel h6 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-dim); margin-bottom: 14px; display: flex; justify-content: space-between; }
+.tweaks-panel h6 span { color: var(--nova); }
 .tweak-group { margin-bottom: 16px; }
 .tweak-group > label { font-size: 11px; color: var(--fg-dim); text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--mono); display: block; margin-bottom: 8px; }
 .tweak-opts { display: flex; gap: 6px; flex-wrap: wrap; }
-.tweak-opt {
-  padding: 6px 10px; font-size: 12px;
-  border: 1px solid var(--border-soft); border-radius: 8px;
-  color: var(--fg-dim); background: transparent;
-  cursor: pointer; font-family: var(--mono);
-}
+.tweak-opt { padding: 6px 10px; font-size: 12px; border: 1px solid var(--border-soft); border-radius: 8px; color: var(--fg-dim); background: transparent; cursor: pointer; font-family: var(--mono); transition: all 0.2s; }
 .tweak-opt.on { background: var(--nova); color: oklch(0.18 0.04 60); border-color: var(--nova); }
+.hue-row { display: flex; justify-content: space-between; margin-bottom: 6px; font-family: var(--mono); font-size: 11px; color: var(--fg-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+input[type=range] { width: 100%; accent-color: var(--nova); cursor: pointer; }
+
+/* ---------- Vis switcher ---------- */
+.vis-wrap { position: relative; }
+.vis-btns { position: absolute; bottom: -28px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+.vis-btn { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border-soft); color: var(--fg-dim); transition: all 0.2s; }
+.vis-btn.on { border-color: var(--nova); color: var(--nova); background: oklch(0.82 0.14 75 / 0.08); }
 
 /* ---------- Animations ---------- */
-@keyframes twinkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.7); }
-}
-@keyframes drift {
-  0% { transform: translateY(0) translateX(0); }
-  100% { transform: translateY(-40px) translateX(12px); }
-}
-@keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 0.7; }
-  100% { transform: scale(2.4); opacity: 0; }
-}
-@keyframes grow {
-  from { stroke-dashoffset: var(--len, 600); }
-  to { stroke-dashoffset: 0; }
-}
-@keyframes orbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes slide-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+@keyframes pulse-dot { 0%,100% { box-shadow: 0 0 8px var(--nova); } 50% { box-shadow: 0 0 22px var(--nova), 0 0 42px oklch(0.82 0.14 75 / 0.3); } }
+@keyframes slide-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pulse-ring { 0% { r: 8; opacity: 0.7; } 100% { r: 28; opacity: 0; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
-  .product-block { grid-template-columns: 1fr !important; grid-template-areas: "text" "visual" !important; gap: 32px; }
-  .product-blocks { gap: 80px; }
   .page { padding: 0 24px; }
-  .hero { grid-template-columns: 1fr; padding: 60px 0 80px; min-height: auto; text-align: center; }
-  .hero-text { display: flex; flex-direction: column; align-items: center; }
-  .hero-label { justify-content: center; }
-  .hero p.lede { margin-left: auto; margin-right: auto; }
-  .hero-ctas { justify-content: center; }
-  .hero-meta { justify-content: center; }
-  .hero-visual { max-width: 480px; margin: 0 auto; }
+  .hero { grid-template-columns: 1fr; padding: 60px 0 80px; min-height: auto; gap: 48px; }
+  .hero-visual { display: none; }
   .section { padding: 80px 0; }
-  .section-head { gap: 20px; }
-  .product-row { grid-template-columns: 40px 1fr; gap: 16px; padding: 20px 0; }
+  .product-row { grid-template-columns: 48px 1fr; gap: 16px; padding: 20px 0; }
   .product-row .product-mockup-wrap, .product-row .parrow { display: none; }
-  .features-grid { grid-template-columns: 1fr; }
-  .features-grid > * { grid-column: span 1 !important; }
+  .features-grid > * { grid-column: span 12 !important; }
   .pricing-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
 }
-
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-meta { flex-direction: column; gap: 8px; }
+}
 </style>
 </head>
 <body>
-<div id="root"></div>
+<div id="root">
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<!-- ══════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="page">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <svg class="logo-mark" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="13" y1="24" x2="13" y2="9" stroke="oklch(0.74 0.12 155)" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M13 18 Q8 13 4 8" stroke="oklch(0.74 0.12 155)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M13 14 Q18 11 22 7" stroke="oklch(0.68 0.14 340)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M13 11 Q12 7 12 4" stroke="oklch(0.82 0.14 75)" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <circle cx="13" cy="3.5" r="2.2" fill="oklch(0.82 0.14 75)"/>
+          <circle cx="3.5" cy="7"   r="1.6" fill="oklch(0.68 0.14 340)"/>
+          <circle cx="22.5" cy="6"  r="1.6" fill="oklch(0.74 0.12 155)"/>
+        </svg>
+        Drasil <em>Nova</em>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button style="font-size:14px;color:var(--fg-dim);padding:8px 14px">Sign in</button>
+        <a href="#pricing" class="btn btn-primary">Start free →</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
+<!-- ══════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="hero">
+
+    <!-- Left: text -->
+    <div class="hero-text">
+      <div class="hero-label">
+        <div class="dot"></div>
+        <span class="eyebrow">A New Star · Est. 2026</span>
+      </div>
+
+      <!-- Copy: Mythic (default) -->
+      <div id="copy-mythic">
+        <h1>Software, <span class="sap">rooted</span> deep,<br>growing <em>bright.</em></h1>
+        <p class="lede">Three apps, one trunk. Built for South Africa — load-shedding included, rand-priced, POPIA-ready. Tools that work when the signal returns.</p>
+      </div>
+      <!-- Copy: Direct -->
+      <div id="copy-direct" style="display:none">
+        <h1>South African <em>SaaS</em> that actually <span class="sap">works.</span></h1>
+        <p class="lede">Three apps for farmers, job seekers, and households. Offline-first, rand-priced. No foreign exchange surprises. No corporate fluff.</p>
+      </div>
+      <!-- Copy: Bold -->
+      <div id="copy-bold" style="display:none">
+        <h1>Stop settling for <em>software</em> built for <span class="sap">elsewhere.</span></h1>
+        <p class="lede">Apps built for where you actually live. Not Silicon Valley. South Africa — kraal, braai, Shoprite and all.</p>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#pricing" class="btn btn-primary">Start free trial →</a>
+        <a href="#products" class="btn btn-ghost">See the apps</a>
+      </div>
+
+      <div class="hero-meta">
+        <div><b>03</b>Apps live</div>
+        <div><b>02</b>On the way</div>
+        <div><b>ZA</b>Rooted · Global</div>
+      </div>
+    </div>
+
+    <!-- Right: visual -->
+    <div class="hero-visual">
+      <div class="vis-wrap" id="vis-wrap">
+
+        <!-- Tree (default) -->
+        <svg id="vis-tree" viewBox="0 0 340 420" width="340" height="420" xmlns="http://www.w3.org/2000/svg">
+          <!-- ambient stars -->
+          <circle cx="30"  cy="30"  r="1"   fill="#fff" opacity="0.4"><animate attributeName="opacity" values="0.4;0.1;0.4" dur="2.3s" repeatCount="indefinite"/></circle>
+          <circle cx="290" cy="50"  r="1.2" fill="#fff" opacity="0.35"><animate attributeName="opacity" values="0.35;0.8;0.35" dur="3.1s" repeatCount="indefinite"/></circle>
+          <circle cx="60"  cy="80"  r="0.8" fill="#fff" opacity="0.5"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="1.9s" repeatCount="indefinite"/></circle>
+          <circle cx="310" cy="150" r="1"   fill="#fff" opacity="0.3"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.7s" repeatCount="indefinite"/></circle>
+          <circle cx="20"  cy="200" r="0.9" fill="#fff" opacity="0.4"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" repeatCount="indefinite"/></circle>
+          <!-- trunk -->
+          <line x1="170" y1="400" x2="170" y2="190" stroke="oklch(0.74 0.12 155)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+          <!-- branch: livestock (sap green, left) -->
+          <path d="M170 300 Q120 260 70 210" stroke="oklch(0.74 0.12 155)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.45"/>
+          <!-- branch: karttly (plum, right) -->
+          <path d="M170 250 Q215 225 256 190" stroke="oklch(0.68 0.14 340)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.45"/>
+          <!-- branch: cvready (nova/gold, up) -->
+          <path d="M170 210 Q168 165 165 124" stroke="oklch(0.82 0.14 75)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.45"/>
+          <!-- tip: Livestock -->
+          <g transform="translate(68,205)">
+            <circle r="7" fill="oklch(0.74 0.12 155)" opacity="0.9"/>
+            <circle r="7" fill="none" stroke="oklch(0.74 0.12 155)" stroke-width="1.5">
+              <animate attributeName="r" from="7" to="26" dur="2.2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.7" to="0" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="14" y="4" font-family="IBM Plex Mono,monospace" font-size="9" fill="oklch(0.74 0.12 155)" letter-spacing="0.06em">LIVESTOCK</text>
+          </g>
+          <!-- tip: Karttly -->
+          <g transform="translate(258,185)">
+            <circle r="7" fill="oklch(0.68 0.14 340)" opacity="0.9"/>
+            <circle r="7" fill="none" stroke="oklch(0.68 0.14 340)" stroke-width="1.5">
+              <animate attributeName="r" from="7" to="26" dur="2.6s" begin="0.8s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.7" to="0" dur="2.6s" begin="0.8s" repeatCount="indefinite"/>
+            </circle>
+            <text x="12" y="4" font-family="IBM Plex Mono,monospace" font-size="9" fill="oklch(0.68 0.14 340)" letter-spacing="0.06em">KARTTLY</text>
+          </g>
+          <!-- tip: CV Ready (brightest) -->
+          <g transform="translate(163,120)">
+            <circle r="9" fill="oklch(0.82 0.14 75)" opacity="0.95"/>
+            <circle r="9" fill="none" stroke="oklch(0.82 0.14 75)" stroke-width="2">
+              <animate attributeName="r" from="9" to="32" dur="2.8s" begin="0.4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.8" to="0" dur="2.8s" begin="0.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="16" y="4" font-family="IBM Plex Mono,monospace" font-size="9" fill="oklch(0.82 0.14 75)" letter-spacing="0.06em">CV READY</text>
+          </g>
+          <!-- forming (dim) -->
+          <circle cx="45" cy="135" r="3.5" fill="white" opacity="0.12">
+            <animate attributeName="opacity" values="0.08;0.22;0.08" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <text x="52" y="139" font-family="IBM Plex Mono,monospace" font-size="8" fill="white" opacity="0.2" letter-spacing="0.05em">FORMING…</text>
+        </svg>
+
+        <!-- Constellation -->
+        <svg id="vis-constellation" viewBox="0 0 340 420" width="340" height="420" xmlns="http://www.w3.org/2000/svg" style="display:none">
+          <line x1="170" y1="210" x2="70"  y2="140" stroke="white" stroke-width="1" stroke-dasharray="5 4" opacity="0.22"/>
+          <line x1="170" y1="210" x2="272" y2="150" stroke="white" stroke-width="1" stroke-dasharray="5 4" opacity="0.22"/>
+          <line x1="170" y1="210" x2="165" y2="78"  stroke="white" stroke-width="1" stroke-dasharray="5 4" opacity="0.22"/>
+          <line x1="170" y1="210" x2="58"  y2="305" stroke="white" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.14"/>
+          <line x1="170" y1="210" x2="286" y2="312" stroke="white" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.14"/>
+          <!-- hub: Drasil Nova -->
+          <g transform="translate(170,210)">
+            <circle r="11" fill="oklch(0.82 0.14 75)" opacity="0.92"/>
+            <circle r="11" fill="none" stroke="oklch(0.82 0.14 75)" stroke-width="1.5">
+              <animate attributeName="r" from="11" to="34" dur="2.4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.6" to="0" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="-38" y="28" font-family="IBM Plex Mono,monospace" font-size="9" fill="oklch(0.82 0.14 75)" letter-spacing="0.04em">DRASIL NOVA</text>
+          </g>
+          <g transform="translate(70,140)">
+            <circle r="7" fill="oklch(0.74 0.12 155)" opacity="0.85"/>
+            <text x="14" y="4" font-family="IBM Plex Mono,monospace" font-size="9" fill="oklch(0.74 0.12 155)">LIVESTOCK</text>
+          </g>
+          <g transform="translate(272,150)">
+            <circle r="7" fill="oklch(0.68 0.14 340)" opacity="0.85"/>
+            <text x="12" y="4" font-family="IBM Plex Mono,monospace" font-size="9" fill="oklch(0.68 0.14 340)">KARTTLY</text>
+          </g>
+          <g transform="translate(165,78)">
+            <circle r="8" fill="oklch(0.82 0.14 75)" opacity="0.9"/>
+            <text x="14" y="4" font-family="IBM Plex Mono,monospace" font-size="9" fill="oklch(0.82 0.14 75)">CV READY</text>
+          </g>
+          <circle cx="58"  cy="305" r="4" fill="white" opacity="0.14"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle>
+          <text x="68"  y="309" font-family="IBM Plex Mono,monospace" font-size="8" fill="white" opacity="0.18">EDUGATE</text>
+          <circle cx="286" cy="312" r="4" fill="white" opacity="0.14"><animate attributeName="opacity" values="0.14;0.32;0.14" dur="2.7s" repeatCount="indefinite"/></circle>
+          <text x="296" y="316" font-family="IBM Plex Mono,monospace" font-size="8" fill="white" opacity="0.18">WORX</text>
+        </svg>
+
+        <!-- Orbit -->
+        <svg id="vis-orbit" viewBox="0 0 340 420" width="340" height="420" xmlns="http://www.w3.org/2000/svg" style="display:none">
+          <ellipse cx="170" cy="210" rx="125" ry="56" stroke="white" stroke-width="0.8" stroke-dasharray="6 5" fill="none" opacity="0.16"/>
+          <ellipse cx="170" cy="210" rx="88"  ry="40" stroke="white" stroke-width="0.8" stroke-dasharray="6 5" fill="none" opacity="0.16"/>
+          <ellipse cx="170" cy="210" rx="52"  ry="23" stroke="white" stroke-width="0.8" stroke-dasharray="6 5" fill="none" opacity="0.16"/>
+          <!-- sun -->
+          <circle cx="170" cy="210" r="17" fill="oklch(0.82 0.14 75)" opacity="0.93"/>
+          <circle cx="170" cy="210" r="17" fill="none" stroke="oklch(0.82 0.14 75)" stroke-width="2">
+            <animate attributeName="r" from="17" to="38" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text x="170" y="240" font-family="IBM Plex Mono,monospace" font-size="8" fill="oklch(0.82 0.14 75)" text-anchor="middle" letter-spacing="0.06em">NOVA</text>
+          <!-- planets -->
+          <g style="transform-origin:170px 210px;animation:orbit 9s linear infinite">
+            <circle cx="295" cy="210" r="9" fill="oklch(0.74 0.12 155)"/>
+            <text x="308" y="214" font-family="IBM Plex Mono,monospace" font-size="7" fill="oklch(0.74 0.12 155)">LIVESTOCK</text>
+          </g>
+          <g style="transform-origin:170px 210px;animation:orbit 14s linear infinite reverse">
+            <circle cx="258" cy="210" r="8" fill="oklch(0.68 0.14 340)"/>
+          </g>
+          <g style="transform-origin:170px 210px;animation:orbit 6s linear infinite">
+            <circle cx="222" cy="210" r="7" fill="oklch(0.82 0.14 75)" opacity="0.85"/>
+          </g>
+        </svg>
+
+        <div class="vis-btns">
+          <button class="vis-btn on" data-vis="tree">Tree</button>
+          <button class="vis-btn" data-vis="constellation">Const.</button>
+          <button class="vis-btn" data-vis="orbit">Orbit</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .hero -->
+</section><!-- .page -->
+
+<!-- ══════════════════════════════════════════════════
+     LOGOS BAR
+══════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="logos">
+    <span class="eyebrow">Trusted by</span>
+    <div class="logos-track-wrap">
+      <div class="logos-track">
+        <span class="logo-item">Du Plessis Farms <span class="logo-star">✦</span></span>
+        <span class="logo-item">Karoo Co-op <span class="logo-star">✦</span></span>
+        <span class="logo-item">UCT Careers <span class="logo-star">✦</span></span>
+        <span class="logo-item">Limpopo Agri <span class="logo-star">✦</span></span>
+        <span class="logo-item">Vukuzenzele Youth <span class="logo-star">✦</span></span>
+        <span class="logo-item">Van der Merwe &amp; Kie <span class="logo-star">✦</span></span>
+        <!-- dupe for seamless loop -->
+        <span class="logo-item">Du Plessis Farms <span class="logo-star">✦</span></span>
+        <span class="logo-item">Karoo Co-op <span class="logo-star">✦</span></span>
+        <span class="logo-item">UCT Careers <span class="logo-star">✦</span></span>
+        <span class="logo-item">Limpopo Agri <span class="logo-star">✦</span></span>
+        <span class="logo-item">Vukuzenzele Youth <span class="logo-star">✦</span></span>
+        <span class="logo-item">Van der Merwe &amp; Kie <span class="logo-star">✦</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PRODUCTS  (II)
+══════════════════════════════════════════════════ -->
+<section id="products" class="section">
+  <div class="page">
+    <div class="section-head">
+      <span class="roman">II</span>
+      <h2>Three branches,<br><em class="sap">one trunk.</em></h2>
+      <div class="sub">
+        <span>03 Live</span><span>02 Forming</span><span>ZA-first</span>
+      </div>
+      <p class="meta-right">Each app solves one problem, deeply. Offline-first where it matters. Rand-priced, always.</p>
+    </div>
+
+    <div class="products">
+
+      <!-- I · Drasil Livestock -->
+      <div class="product-row">
+        <div class="num">I</div>
+        <div>
+          <div class="pname pname-livestock">Drasil Livestock</div>
+          <p class="pdesc">Tag, weigh, vaccinate, and breed — without cell signal. Built for working farmers in rural South Africa where connectivity is a luxury, not a right.</p>
+          <div class="ptags">
+            <span class="tag">Offline-first</span><span class="tag">Livestock</span><span class="tag">Poultry</span><span class="tag">Vaccination</span><span class="tag">PWA</span>
+          </div>
+        </div>
+        <!-- mini mockup -->
+        <div class="product-mockup-wrap">
+          <svg class="product-mockup" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:120px">
+            <text x="10" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="oklch(0.74 0.12 155)" letter-spacing="0.08em">HERD · 247 HEAD</text>
+            <polyline points="10,100 36,88 62,93 88,74 114,80 140,62 166,66 192,50"
+              stroke="oklch(0.74 0.12 155)" stroke-width="2" fill="none" stroke-linecap="round"
+              stroke-dasharray="260" stroke-dashoffset="260">
+              <animate attributeName="stroke-dashoffset" from="260" to="0" dur="1.4s" begin="0.3s" fill="freeze"/>
+            </polyline>
+            <circle r="4" fill="oklch(0.74 0.12 155)">
+              <animateMotion dur="3s" repeatCount="indefinite" path="M10,100 36,88 62,93 88,74 114,80 140,62 166,66 192,50"/>
+            </circle>
+          </svg>
+        </div>
+        <div class="parrow">→</div>
+      </div>
+
+      <!-- II · Karttly -->
+      <div class="product-row">
+        <div class="num">II</div>
+        <div>
+          <div class="pname pname-karttly">Karttly</div>
+          <p class="pdesc">Set a rand budget, get a week of AI-generated meals with a ready shopping list. Priced for Shoprite, not Woolworths. Real South African meal planning.</p>
+          <div class="ptags">
+            <span class="tag">AI Recipes</span><span class="tag">Budget</span><span class="tag">Meal Prep</span><span class="tag">ZAR</span><span class="tag">PWA</span>
+          </div>
+        </div>
+        <div class="product-mockup-wrap">
+          <svg class="product-mockup" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:120px">
+            <text x="10" y="16" font-family="IBM Plex Mono,monospace" font-size="7" fill="oklch(0.68 0.14 340)" letter-spacing="0.08em">WEEKLY BUDGET</text>
+            <text x="10" y="28" font-family="Instrument Serif,serif" font-size="11" fill="white">R 850 / R 1 200</text>
+            <rect x="10" y="34" width="180" height="7" rx="3.5" fill="oklch(0.25 0.02 260)"/>
+            <rect x="10" y="34" width="0" height="7" rx="3.5" fill="oklch(0.68 0.14 340)">
+              <animate attributeName="width" from="0" to="126" dur="1s" begin="0.2s" fill="freeze"/>
+            </rect>
+            <rect x="10" y="50" width="50" height="56" rx="6" fill="oklch(0.20 0.025 340/0.4)" stroke="oklch(0.68 0.14 340/0.3)" stroke-width="0.8"/>
+            <text x="17" y="62" font-family="IBM Plex Mono,monospace" font-size="6" fill="oklch(0.68 0.14 340)">MON</text>
+            <text x="12" y="74" font-family="Instrument Serif,serif" font-size="9" fill="white" font-style="italic">Bobotie</text>
+            <rect x="66" y="50" width="50" height="56" rx="6" fill="oklch(0.20 0.025 340/0.4)" stroke="oklch(0.68 0.14 340/0.3)" stroke-width="0.8"/>
+            <text x="73" y="62" font-family="IBM Plex Mono,monospace" font-size="6" fill="oklch(0.68 0.14 340)">TUE</text>
+            <text x="68" y="74" font-family="Instrument Serif,serif" font-size="9" fill="white" font-style="italic">Pap &amp; Wors</text>
+            <rect x="122" y="50" width="50" height="56" rx="6" fill="oklch(0.20 0.025 340/0.4)" stroke="oklch(0.68 0.14 340/0.3)" stroke-width="0.8"/>
+            <text x="129" y="62" font-family="IBM Plex Mono,monospace" font-size="6" fill="oklch(0.68 0.14 340)">WED</text>
+            <text x="124" y="74" font-family="Instrument Serif,serif" font-size="9" fill="white" font-style="italic">Braai Pack</text>
+          </svg>
+        </div>
+        <div class="parrow">→</div>
+      </div>
+
+      <!-- III · CV Ready -->
+      <div class="product-row">
+        <div class="num">III</div>
+        <div>
+          <div class="pname pname-cvready">CV Ready</div>
+          <p class="pdesc">ATS-friendly CVs built for South African employers. AI interview coach, disability disclosure, Memory Jogger for 13 job types. One flat R60 — no subscription trap.</p>
+          <div class="ptags">
+            <span class="tag">ATS-Friendly</span><span class="tag">AI Coach</span><span class="tag">SA Market</span><span class="tag">R60 Once-off</span><span class="tag">PWA</span>
+          </div>
+        </div>
+        <div class="product-mockup-wrap">
+          <svg class="product-mockup" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:120px">
+            <text x="10" y="16" font-family="IBM Plex Mono,monospace" font-size="7" fill="oklch(0.82 0.14 75)" letter-spacing="0.08em">AI INTERVIEW COACH</text>
+            <rect x="10" y="22" width="112" height="15" rx="4" fill="oklch(0.22 0.025 260)"/>
+            <text x="15" y="33" font-family="Geist,sans-serif" font-size="7" fill="oklch(0.72 0.01 90)">Tell me about yourself…</text>
+            <rect x="70" y="41" width="120" height="15" rx="4" fill="oklch(0.22 0.03 75/0.35)"/>
+            <text x="75" y="52" font-family="Geist,sans-serif" font-size="7" fill="oklch(0.82 0.14 75)">3 years in logistics…</text>
+            <text x="10" y="74" font-family="IBM Plex Mono,monospace" font-size="6.5" fill="oklch(0.72 0.01 90)" letter-spacing="0.08em">INTERVIEW SCORE</text>
+            <rect x="10" y="80" width="180" height="6" rx="3" fill="oklch(0.25 0.02 260)"/>
+            <rect x="10" y="80" width="0" height="6" rx="3" fill="oklch(0.82 0.14 75)">
+              <animate attributeName="width" from="0" to="148" dur="1.2s" begin="0.5s" fill="freeze"/>
+            </rect>
+            <text x="10" y="108" font-family="Instrument Serif,serif" font-size="26" fill="oklch(0.82 0.14 75)">82</text>
+            <text x="38" y="108" font-family="IBM Plex Mono,monospace" font-size="8" fill="oklch(0.72 0.01 90)">/100</text>
+            <text x="62" y="108" font-family="IBM Plex Mono,monospace" font-size="7" fill="oklch(0.74 0.12 155)" letter-spacing="0.05em">STRONG ✓</text>
+          </svg>
+        </div>
+        <div class="parrow">→</div>
+      </div>
+
+      <!-- IV · EduGate (coming) -->
+      <div class="product-row" style="opacity:0.5">
+        <div class="num" style="font-style:italic">IV</div>
+        <div>
+          <div class="pname pname-coming">EduGate
+            <span style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-faint);font-style:normal;margin-left:10px">· Coming Soon</span>
+          </div>
+          <p class="pdesc">Gate access to entertainment apps behind AI-generated tasks. Children earn their screen time. Android-first, built for SA schools and homes.</p>
+          <div class="ptags"><span class="tag">In Development</span><span class="tag">Android</span><span class="tag">EdTech</span></div>
+        </div>
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--fg-faint);text-align:center">✦ forming ✦</div>
+        <div class="parrow" style="opacity:0.3">→</div>
+      </div>
+
+      <!-- V · Worx Suite (coming) -->
+      <div class="product-row" style="opacity:0.5">
+        <div class="num" style="font-style:italic">V</div>
+        <div>
+          <div class="pname pname-coming">Worx Suite
+            <span style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-faint);font-style:normal;margin-left:10px">· Coming Soon</span>
+          </div>
+          <p class="pdesc">PlumberWorx, SparkieWorx, MechWorx. Quoting and invoicing for SA tradespeople. Send quotes via WhatsApp. Offline-ready for the job site.</p>
+          <div class="ptags"><span class="tag">In Development</span><span class="tag">Invoicing</span><span class="tag">Trades</span><span class="tag">WhatsApp</span></div>
+        </div>
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--fg-faint);text-align:center">✦ forming ✦</div>
+        <div class="parrow" style="opacity:0.3">→</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PLATFORM  (III)
+══════════════════════════════════════════════════ -->
+<section id="platform" class="section" style="background:oklch(0.155 0.022 260/0.45)">
+  <div class="page">
+    <div class="section-head">
+      <span class="roman">III</span>
+      <h2>Shared <em class="sap">roots.</em></h2>
+      <div class="sub"><span>05 Pillars</span><span>One foundation</span></div>
+      <p class="meta-right">Every Drasil Nova app is built on the same bedrock — good infrastructure should not be rebuilt from scratch each time.</p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card col-5">
+        <div class="fnum">F.01 · Privacy</div>
+        <div>
+          <h3>POPIA-compliant, <em>by design.</em></h3>
+          <p>South Africa's Protection of Personal Information Act — baked in from day one. Your data stays in South Africa. No exceptions.</p>
+        </div>
+      </div>
+
+      <div class="feature-card col-7">
+        <div class="fnum">F.02 · Offline-First</div>
+        <div>
+          <h3>The signal returns. <em class="sap">The work catches up.</em></h3>
+          <p>Load-shedding is a fact of life. Our apps cache everything locally and sync when connectivity returns. No half-saved forms. No lost data. Built for stage 6, 8, and everything in between.</p>
+        </div>
+        <!-- animated sync diagram -->
+        <svg viewBox="0 0 220 36" style="width:100%;max-width:220px;margin-top:14px" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="7" fill="oklch(0.55 0.05 260)"><animate attributeName="fill" values="oklch(0.55 0.05 260);oklch(0.74 0.12 155);oklch(0.74 0.12 155)" dur="3s" repeatCount="indefinite"/></circle>
+          <line x1="28" y1="18" x2="72" y2="18" stroke="oklch(0.3 0.03 260/0.4)" stroke-width="1.5" stroke-dasharray="4 3"><animate attributeName="stroke" values="oklch(0.3 0.03 260/0.4);oklch(0.74 0.12 155/0.6);oklch(0.74 0.12 155/0.6)" dur="3s" repeatCount="indefinite"/></line>
+          <circle cx="82" cy="18" r="7" fill="oklch(0.55 0.05 260)"><animate attributeName="fill" values="oklch(0.55 0.05 260);oklch(0.74 0.12 155);oklch(0.74 0.12 155)" dur="3s" begin="0.4s" repeatCount="indefinite"/></circle>
+          <line x1="92" y1="18" x2="136" y2="18" stroke="oklch(0.3 0.03 260/0.4)" stroke-width="1.5" stroke-dasharray="4 3"><animate attributeName="stroke" values="oklch(0.3 0.03 260/0.4);oklch(0.74 0.12 155/0.6);oklch(0.74 0.12 155/0.6)" dur="3s" begin="0.4s" repeatCount="indefinite"/></line>
+          <circle cx="146" cy="18" r="7" fill="oklch(0.55 0.05 260)"><animate attributeName="fill" values="oklch(0.55 0.05 260);oklch(0.74 0.12 155);oklch(0.74 0.12 155)" dur="3s" begin="0.8s" repeatCount="indefinite"/></circle>
+          <text x="158" y="22" font-family="IBM Plex Mono,monospace" font-size="8" fill="oklch(0.74 0.12 155)" letter-spacing="0.06em">synced ✓</text>
+        </svg>
+      </div>
+
+      <div class="feature-card col-4">
+        <div class="fnum">F.03 · Nova ID</div>
+        <h3>One login, <em class="plum">every app.</em></h3>
+        <p>Sign in once across all Drasil Nova products. No new password per app. One identity, five products.</p>
+      </div>
+
+      <div class="feature-card col-4">
+        <div class="fnum">F.04 · Pricing</div>
+        <h3>Rand prices. <em>Always.</em></h3>
+        <p>No dollar conversions. No surprise billing when the rand moves. What you see is what you pay — in rands, via PayFast.</p>
+      </div>
+
+      <div class="feature-card col-4">
+        <div class="fnum">F.05 · Open Data</div>
+        <h3>Your data is <em class="sap">yours.</em></h3>
+        <p>Export everything, anytime. CSV, JSON, PDF. We do not hold your data hostage. Ever.</p>
+      </div>
+
+      <div class="feature-card col-12" style="flex-direction:row;align-items:center;justify-content:space-between;gap:40px;min-height:auto">
+        <div>
+          <div class="fnum">F.06 · Roadmap</div>
+          <h3>Two new stars, <em>currently forming.</em></h3>
+          <p style="max-width:560px">EduGate and the Worx Suite are in active development. Follow the build in public at drasilnova.co.za/roadmap.</p>
+        </div>
+        <div style="display:flex;gap:28px;flex-shrink:0">
+          <div style="text-align:center">
+            <div style="font-family:var(--serif);font-size:2.4rem;font-style:italic;color:var(--nova)">Q3</div>
+            <div style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--fg-dim);text-transform:uppercase;margin-top:4px">EduGate</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:var(--serif);font-size:2.4rem;font-style:italic;color:var(--plum)">Q4</div>
+            <div style="font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--fg-dim);text-transform:uppercase;margin-top:4px">Worx Suite</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PRICING  (IV)
+══════════════════════════════════════════════════ -->
+<section id="pricing" class="section">
+  <div class="page">
+    <div class="section-head">
+      <span class="roman">IV</span>
+      <h2>Honest prices,<br><em>in rand.</em></h2>
+      <div class="sub"><span>No USD</span><span>No surprises</span><span>Cancel anytime</span></div>
+      <p class="meta-right">Three tiers. One for getting started, one for growing, one for teams. No foreign exchange gymnastics — ever.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Seedling -->
+      <div class="pricing-card">
+        <h4>Seedling</h4>
+        <div class="price">Free</div>
+        <p class="period">Forever · No card needed</p>
+        <ul>
+          <li>1 app access</li>
+          <li>Core features only</li>
+          <li>Nova ID included</li>
+          <li>Community support</li>
+          <li>Offline access</li>
+        </ul>
+        <a href="#" class="btn btn-ghost" style="justify-content:center">Get started →</a>
+      </div>
+
+      <!-- Grove (featured) -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most popular</div>
+        <h4 class="nova">Grove</h4>
+        <div class="price nova">R 149<span>/ month</span></div>
+        <p class="period">Billed monthly · cancel anytime</p>
+        <ul>
+          <li>All 3 live apps</li>
+          <li>Full feature access</li>
+          <li>AI features included</li>
+          <li>Priority support</li>
+          <li>Data export (CSV, PDF)</li>
+          <li>Early access to new apps</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="justify-content:center">Choose Grove →</a>
+      </div>
+
+      <!-- Canopy -->
+      <div class="pricing-card">
+        <h4>Canopy</h4>
+        <div class="price">R 549<span>/ month</span></div>
+        <p class="period">Teams up to 10 · billed monthly</p>
+        <ul>
+          <li>Everything in Grove</li>
+          <li>Up to 10 users</li>
+          <li>Team dashboards</li>
+          <li>Usage analytics</li>
+          <li>Dedicated support</li>
+          <li>Custom onboarding</li>
+        </ul>
+        <a href="#" class="btn btn-ghost" style="justify-content:center">Choose Canopy →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER  (roots)
+══════════════════════════════════════════════════ -->
+<footer id="about" class="footer">
+  <div class="page">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;font-family:var(--serif);font-size:18px;margin-bottom:14px">
+          <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
+            <line x1="13" y1="24" x2="13" y2="9" stroke="oklch(0.74 0.12 155)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M13 18 Q8 13 4 8" stroke="oklch(0.74 0.12 155)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.7"/>
+            <circle cx="13" cy="3.5" r="2.2" fill="oklch(0.82 0.14 75)"/>
+            <circle cx="3.5" cy="7"   r="1.6" fill="oklch(0.68 0.14 340)"/>
+            <circle cx="22.5" cy="6"  r="1.6" fill="oklch(0.74 0.12 155)"/>
+          </svg>
+          Drasil Nova
+        </div>
+        <p class="footer-quote">"A young studio, rooted in South Africa,<br>building quiet software for loud lives."</p>
+      </div>
+      <div>
+        <h5>Apps</h5>
+        <a href="#products">Drasil Livestock</a>
+        <a href="#products">Karttly</a>
+        <a href="#products">CV Ready</a>
+        <a href="#products">EduGate — Soon</a>
+        <a href="#products">Worx Suite — Soon</a>
+      </div>
+      <div>
+        <h5>Studio</h5>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Roadmap</a>
+        <a href="#">Careers</a>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <a href="#">Documentation</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">POPIA Notice</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <span class="footer-sig">Drasil Nova</span>
+
+  <div class="page">
+    <div class="footer-meta">
+      <span>© MMXXVI · Drasil Nova (Pty) Ltd</span>
+      <span>South Africa · 26.2°S</span>
+      <span>A new star, just forming.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     TWEAKS PANEL
+══════════════════════════════════════════════════ -->
+<button id="tweaks-toggle" title="Design tweaks">⚙</button>
+<div class="tweaks-panel" id="tweaks-panel">
+  <h6>Design Tweaks <span>✦</span></h6>
+  <div class="tweak-group">
+    <label>Hero copy</label>
+    <div class="tweak-opts">
+      <button class="tweak-opt on" data-copy="mythic">Mythic</button>
+      <button class="tweak-opt" data-copy="direct">Direct</button>
+      <button class="tweak-opt" data-copy="bold">Bold</button>
+    </div>
+  </div>
+  <div class="tweak-group">
+    <label>Hero visual</label>
+    <div class="tweak-opts">
+      <button class="tweak-opt on" data-vis-t="tree">Tree</button>
+      <button class="tweak-opt" data-vis-t="constellation">Const.</button>
+      <button class="tweak-opt" data-vis-t="orbit">Orbit</button>
+    </div>
+  </div>
+  <div class="tweak-group">
+    <div class="hue-row"><span>Nova accent hue</span><span id="hue-val">75°</span></div>
+    <input type="range" min="0" max="360" value="75" id="hue-slider">
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCROLL REVEAL + INTERACTIVITY
+══════════════════════════════════════════════════ -->
 <script>
-// Tweakable defaults persisted via the Tweaks toolbar
-window.DRASIL_TWEAKS = /*EDITMODE-BEGIN*/{
-  "heroCopyVariant": "mythic",
-  "heroVisualVariant": "tree",
-  "accentHue": 265
-}/*EDITMODE-END*/;
+// ── Visual switcher ─────────────────────────────────────────────
+function switchVis(name) {
+  ['tree','constellation','orbit'].forEach(v => {
+    document.getElementById('vis-'+v).style.display = v === name ? 'block' : 'none';
+  });
+  document.querySelectorAll('[data-vis],[data-vis-t]').forEach(b => {
+    const k = b.dataset.vis || b.dataset.visT;
+    b.classList.toggle('on', k === name);
+  });
+}
+document.querySelectorAll('[data-vis]').forEach(b => b.addEventListener('click', () => switchVis(b.dataset.vis)));
+document.querySelectorAll('[data-vis-t]').forEach(b => b.addEventListener('click', () => switchVis(b.dataset.visT)));
+
+// ── Copy variant switcher ────────────────────────────────────────
+function switchCopy(name) {
+  ['mythic','direct','bold'].forEach(v => {
+    document.getElementById('copy-'+v).style.display = v === name ? 'block' : 'none';
+  });
+  document.querySelectorAll('[data-copy]').forEach(b => b.classList.toggle('on', b.dataset.copy === name));
+}
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', () => switchCopy(b.dataset.copy)));
+
+// ── Tweaks panel toggle ──────────────────────────────────────────
+document.getElementById('tweaks-toggle').addEventListener('click', () => {
+  document.getElementById('tweaks-panel').classList.toggle('open');
+});
+
+// ── Hue slider ───────────────────────────────────────────────────
+document.getElementById('hue-slider').addEventListener('input', function () {
+  const h = this.value;
+  document.getElementById('hue-val').textContent = h + '°';
+  document.documentElement.style.setProperty('--nova', `oklch(0.82 0.14 ${h})`);
+  document.documentElement.style.setProperty('--nova-deep', `oklch(0.62 0.16 ${Math.max(0, h - 20)})`);
+});
+
+// ── Scroll reveal ────────────────────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.product-row, .feature-card, .pricing-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+  obs.observe(el);
+});
 </script>
 
-<script type="text/babel" src="components/Nav.jsx"></script>
-<script type="text/babel" src="components/HeroVisual.jsx"></script>
-<script type="text/babel" src="components/Hero.jsx"></script>
-<script type="text/babel" src="components/Products.jsx"></script>
-<script type="text/babel" src="components/Features.jsx"></script>
-<script type="text/babel" src="components/Logos.jsx"></script>
-<script type="text/babel" src="components/Pricing.jsx"></script>
-<script type="text/babel" src="components/Footer.jsx"></script>
-<script type="text/babel" src="components/Tweaks.jsx"></script>
-<script type="text/babel" src="app.jsx"></script>
+</div><!-- #root -->
 </body>
 </html>
