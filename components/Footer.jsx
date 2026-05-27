@@ -5,7 +5,7 @@ function Footer() {
         <div className="footer-grid">
           <div>
             <div style={{ marginBottom: 20 }}>
-              <img src="assets/drasil-nova-logo.png" alt="Drasil Nova" style={{ width: 180, height: "auto", display: "block", borderRadius: 12 }} />
+              <AnimatedLogoFull width={200} />
             </div>
             <p style={{ color: "var(--fg-dim)", maxWidth: "40ch", fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 18, lineHeight: 1.4 }}>
               "A young South African app studio,<br/>building quiet software<br/>for loud lives."
@@ -16,8 +16,7 @@ function Footer() {
           </div>
           <div>
             <h5>Apps</h5>
-            <a href="https://farm-dairy-ten.vercel.app/" target="_blank" rel="noopener">Drasil Agri · Livestock ↗</a>
-            <a href="https://farm-dairy-poultry.vercel.app/" target="_blank" rel="noopener">Drasil Agri · Poultry ↗</a>
+            <a href="https://drasil-agri.vercel.app/" target="_blank" rel="noopener">Drasil Agri ↗</a>
             <a href="https://karttly-lctp.vercel.app/" target="_blank" rel="noopener">Karttly ↗</a>
             <a href="https://trade-worx.vercel.app/" target="_blank" rel="noopener">Trade Worx · <span style={{ color: "var(--nova)" }}>beta</span> ↗</a>
             <a href="#" style={{ color: "var(--fg-faint)" }}>CV Ready · <span style={{ fontStyle: "italic" }}>soon</span></a>

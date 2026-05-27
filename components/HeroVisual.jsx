@@ -34,6 +34,36 @@ function Starfield({ count = 60, seed = 1 }) {
   );
 }
 
+// ───── Variant 0: the Logo (big animated emblem) ──────────────────────
+function LogoVariant() {
+  return (
+    <div className="hero-logo-wrap">
+      <svg viewBox="0 0 500 520" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
+        <Starfield count={80} seed={4} />
+      </svg>
+      <div className="hero-logo-stage">
+        {/* outer radial glow */}
+        <div className="hero-logo-glow" />
+        {/* rotating shimmer ring */}
+        <div className="hero-logo-shimmer" />
+        {/* the real logo emblem */}
+        <img
+          src="assets/drasil-nova-logo.png"
+          alt="Drasil Nova"
+          className="hero-logo-image"
+        />
+        {/* pulsing star at center */}
+        <div className="hero-logo-pulse" />
+        {/* slowly orbiting tiny stars */}
+        <div className="hero-logo-orbit hero-logo-orbit-1" />
+        <div className="hero-logo-orbit hero-logo-orbit-2" />
+        <div className="hero-logo-orbit hero-logo-orbit-3" />
+      </div>
+      <div className="hero-logo-caption">❧ a south african app studio ❧</div>
+    </div>
+  );
+}
+
 // ───── Variant 1: the Tree ─────────────────────────────────────────────────
 function TreeVariant() {
   return (
@@ -269,10 +299,11 @@ function OrbitVariant() {
   );
 }
 
-function HeroVisual({ variant = "tree" }) {
-  const Comp = variant === "constellation" ? ConstellationVariant
+function HeroVisual({ variant = "logo" }) {
+  const Comp = variant === "tree" ? TreeVariant
+             : variant === "constellation" ? ConstellationVariant
              : variant === "orbit" ? OrbitVariant
-             : TreeVariant;
+             : LogoVariant;
   return (
     <div className="hero-visual" style={{ position: "relative" }}>
       <Comp />

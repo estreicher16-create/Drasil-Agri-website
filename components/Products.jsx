@@ -145,16 +145,16 @@ function CVReadyMockup() {
 const PRODUCT_DATA = [
   {
     num: "I",
-    name: <>Drasil Agri · <em>Livestock</em></>,
-    tagline: "Cattle, sheep & goat management for working farmers.",
-    desc: "Cattle, sheep, goats and game — one app, total livestock visibility. Drasil Agri Livestock is the herd book that lives in your pocket: full animal register with individual profiles, calving records with target dates and production metrics, complete health logs and treatment history, and species selection across cattle, sheep, goats and game. Capture vaccine batch numbers and vet notes, manage permit checklists, and download professional PDF & Excel reports — P&L summaries, FMD compliance certificates, vaccination certs and attendance records — for any data set.",
+    name: <>Drasil <em>Agri</em></>,
+    tagline: "One app. Total farm visibility — livestock, poultry, fish, rabbits and more.",
+    desc: "Drasil Agri is the all-in-one farm management app for working farmers. Cattle, sheep, goats and game; broilers, layers, breeders and ducks; fish, rabbits and beyond — every species, every flock, every animal in one place. Full animal and flock registers, calving and hatch records, complete health logs and treatment history, permit checklists and professional PDF & Excel reports (P&L, FMD compliance, vaccination certificates, attendance records) — built offline-first for the kraal and synced when you're back in signal.",
     bullets: [
-      "Full animal register — individual profiles for cattle, sheep, goats and game.",
-      "Calving records with birth tracking, target dates and production metrics.",
-      "Health logs & treatment history — vaccine batch numbers, vet notes, health trends.",
-      "Permit checklists and vaccination certificates, ready when you need them.",
-      "Professional PDF & Excel reports — P&L, FMD compliance, attendance records.",
-      "40-day free tree trial. Available on App Store and Google Play.",
+      "Livestock — full register and lineage for cattle, sheep, goats and game.",
+      "Poultry — broilers, layers, breeders and ducks with Lay %, FCR and mortality tracking.",
+      "Aquaculture — fish stock tracking, feeding schedules and pond/tank health.",
+      "Small livestock — rabbits and more, with breeding cycles and health logs.",
+      "Permit checklists, vaccination certificates and treatment history at your fingertips.",
+      "Professional PDF & Excel reports — P&L, FMD compliance, attendance. 40-day free trial.",
     ],
     hue: 155,
     Mockup: LivestockMockup,
@@ -162,31 +162,10 @@ const PRODUCT_DATA = [
     status: "LIVE",
     region: "INTERNATIONAL",
     logo: "assets/drasil-agri-logo.png",
-    url: "https://farm-dairy-ten.vercel.app/",
+    url: "https://drasil-agri.vercel.app/",
   },
   {
     num: "II",
-    name: <>Drasil Agri · <em>Poultry</em></>,
-    tagline: "Dedicated poultry app for commercial operations.",
-    desc: "A dedicated poultry app, specialised for commercial poultry operations — broilers, layers, breeders and ducks. Drasil Agri Poultry tracks flock life cycles end to end: monitor production metrics like Lay % and FCR, log mortality and feed conversion, record daily egg numbers and calculate Lay % for layers and breeders. Manage movement permits and state-vet certificates, track hatch data and hatchery efficiency, and download professional PDF & Excel reports — P&L summaries, vaccination certificates, FMD compliance certs and attendance records.",
-    bullets: [
-      "Dedicated poultry app for commercial operations — broilers, layers, breeders, ducks.",
-      "Flock history & batch data — Lay %, FCR, mortality, feed conversion, performance trends.",
-      "Egg collection & tracking — daily numbers and automatic Lay % per house.",
-      "Permit checklists, hatch data and hatchery efficiency in one place.",
-      "Professional PDF & Excel reports — P&L, vaccination certs, FMD compliance, attendance.",
-      "One app. Total poultry visibility — 40 day free trial ",
-    ],
-    hue: 60,
-    Mockup: PoultryMockup,
-    image: "assets/drasil-agri-poultry-infographic.png",
-    status: "LIVE",
-    region: "INTERNATIONAL",
-    logo: "assets/drasil-agri-logo.png",
-    url: "https://farm-dairy-poultry.vercel.app/",
-  },
-  {
-    num: "III",
     name: <>Karttly</>,
     tagline: "Shopping & lifestyle app — every expense, every list, every meal.",
     desc: "Karttly is the shopping & lifestyle companion that gives you total personal visibility — every expense, every list, every meal in one app. Track all expenses and balance with a real-time total, compare prices to find the best deal, keep all your loyalty cards in one place, coordinate shared lists with the family in real-time, plan the week's meals and generate recipes, and visualise your spending history with rich analytics.",
@@ -207,7 +186,7 @@ const PRODUCT_DATA = [
     url: "https://karttly-lctp.vercel.app/",
   },
   {
-    num: "IV",
+    num: "III",
     name: <>Trade <em>Worx</em></>,
     tagline: "Invoicing for trades. POS for small retail. Complete visibility in one app.",
     desc: "Trade Worx gives South African small businesses total business visibility — every quote, every job, every sale in one app. Run your business from the bakkie: send professional quotes for instant job specs, track on-site field service jobs, manage stock with reorder suggestions, issue VAT-ready invoices with accurate Rand totals, and switch into Small Retail / POS mode for barcode scanning and end-of-day cash-up.",
@@ -228,7 +207,7 @@ const PRODUCT_DATA = [
     url: "https://trade-worx.vercel.app/",
   },
   {
-    num: "V",
+    num: "IV",
     name: <>CV <em>Ready</em></>,
     tagline: "Recruiter-ready CVs and an interview coach for the SA market.",
     desc: "CV Ready helps South African job seekers move from \"I'm looking\" to \"I got the offer.\" Build an ATS-friendly CV in minutes, then practise the interview with an AI coach that understands local industries — mining, fintech, retail, public sector — and the questions that actually come up.",
@@ -297,7 +276,7 @@ function Products() {
   return (
     <section className="section page" id="products" data-screen-label="Products">
       <div className="section-head">
-        <h2 className="h-serif"><em>Five</em><br />branches,<br />each its own.</h2>
+        <h2 className="h-serif"><em>Four</em><br />branches,<br />each its own.</h2>
         <div className="sub">
           <span>II · THE CATALOGUE</span>
           <span>Drasil Nova SaaS apps</span>

@@ -26,7 +26,7 @@ function Tweaks({ open, tweaks, setTweaks }) {
       <div className="tweak-group">
         <label>Hero visual</label>
         <div className="tweak-opts">
-          {["tree", "constellation", "orbit"].map(v => (
+          {["logo", "tree", "constellation", "orbit"].map(v => (
             <button key={v} className={"tweak-opt" + (tweaks.heroVisualVariant === v ? " on" : "")}
               onClick={() => set({ heroVisualVariant: v })}>{v}</button>
           ))}

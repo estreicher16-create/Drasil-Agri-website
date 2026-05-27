@@ -28,7 +28,7 @@ function Nav() {
     <nav className="nav">
       <div className="page nav-inner">
         <a href="#" className="logo">
-          <img src="assets/drasil-nova-logo.png" alt="Drasil Nova" style={{ width: 38, height: 38, objectFit: "cover", objectPosition: "center 35%", borderRadius: 8, background: "oklch(0.08 0.02 260)" }} />
+          <AnimatedLogo size={38} />
           <span>Drasil <em>Nova</em></span>
         </a>
         <div className="nav-links">

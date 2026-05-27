@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   const cycleVisual = () => {
-    const order = ["tree", "constellation", "orbit"];
+    const order = ["logo", "tree", "constellation", "orbit"];
     const next = order[(order.indexOf(tweaks.heroVisualVariant) + 1) % order.length];
     setTweaks({ ...tweaks, heroVisualVariant: next });
   };
